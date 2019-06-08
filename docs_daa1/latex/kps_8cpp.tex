@@ -1,0 +1,216 @@
+\hypertarget{kps_8cpp}{}\section{C\+:/\+Users/\+Nikhil Nair/\+Documents/\+College/assignments-\/git/\+D\+A\+A-\/\+Hulls-\/final/kps.cpp File Reference}
+\label{kps_8cpp}\index{C:/Users/Nikhil Nair/Documents/College/assignments-\/git/DAA-\/Hulls-\/final/kps.cpp@{C:/Users/Nikhil Nair/Documents/College/assignments-\/git/DAA-\/Hulls-\/final/kps.cpp}}
+{\ttfamily \#include \char`\"{}kps.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{kps_8cpp_a8e42270d34838870afabaee7248463a3}{same\+Point}} (\mbox{\hyperlink{struct_point}{Point}} a, \mbox{\hyperlink{struct_point}{Point}} b)
+\begin{DoxyCompactList}\small\item\em A normal member that takes two points as arguments and tells if the two points are identical. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{kps_8cpp_a237fe9dff736659b7f190c38e93f2265}{calc\+Slope}} (pair$<$ \mbox{\hyperlink{struct_point}{Point}}, \mbox{\hyperlink{struct_point}{Point}} $>$ edge)
+\begin{DoxyCompactList}\small\item\em A normal member that takes an edge and determines its slope. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{kps_8cpp_a5bd07e844e37331c57a4a8c52499f6e7}{double\+\_\+equals}} (double a, double b, double epsilon=0.\+001)
+\begin{DoxyCompactList}\small\item\em A normal member that determines if two double values are equal upto a particular precision set by an epsilon difference = 0.\+001. \end{DoxyCompactList}\item 
+pair$<$ \mbox{\hyperlink{struct_point}{Point}}, \mbox{\hyperlink{struct_point}{Point}} $>$ \mbox{\hyperlink{kps_8cpp_ae7c93cc88d352dd18a82b60858bd20b8}{upper\+Bridge}} (vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ T, double median)
+\begin{DoxyCompactList}\small\item\em Member function that determines the upper bridge in a vector of input points connecting points separated by an x\+\_\+median; x\+\_\+median here is the median of x coordinates of all the points in the input vector. \end{DoxyCompactList}\item 
+pair$<$ \mbox{\hyperlink{struct_point}{Point}}, \mbox{\hyperlink{struct_point}{Point}} $>$ \mbox{\hyperlink{kps_8cpp_aca9ef6c2372392be7d83758512e04e21}{lower\+Bridge}} (vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ T, double median)
+\begin{DoxyCompactList}\small\item\em Member function that determines the lower bridge in a vector of input points connecting points separated by an x\+\_\+median; x\+\_\+median here is the median of x coordinates of all the points in the input vector. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kps_8cpp_a95544592424e5160a0bc59fa1bf20c95}{orientation}} (\mbox{\hyperlink{struct_point}{Point}} a, \mbox{\hyperlink{struct_point}{Point}} b, \mbox{\hyperlink{struct_point}{Point}} c)
+\begin{DoxyCompactList}\small\item\em A normal member that determines if an ordered set of three Points are collinear or oriented in a clockwise/counter-\/clockwise manner. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ \mbox{\hyperlink{kps_8cpp_a60e9476b6f8a1a6c9048157f45ac5c24}{upper\+Hull}} (\mbox{\hyperlink{struct_point}{Point}} p\+\_\+min, \mbox{\hyperlink{struct_point}{Point}} p\+\_\+max, vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ T)
+\begin{DoxyCompactList}\small\item\em Member function that determines the convex hull of all the upper points of the initial two dimensional polygon segmented by a p\+\_\+min and p\+\_\+max. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ \mbox{\hyperlink{kps_8cpp_a7da0bc7138955968045c79689878e850}{lower\+Hull}} (\mbox{\hyperlink{struct_point}{Point}} p\+\_\+min, \mbox{\hyperlink{struct_point}{Point}} p\+\_\+max, vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ T)
+\begin{DoxyCompactList}\small\item\em Member function that determines the convex hull of all the lower points of the initial two dimensional polygon segmented by a p\+\_\+min and p\+\_\+max. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ \mbox{\hyperlink{kps_8cpp_a8262bce8eade0860290d7095fefb17c5}{kirk\+Patrick\+Seidel}} (int n)
+\begin{DoxyCompactList}\small\item\em Main member function that performs the Kirk Patrick Seidel algorithm. It first determines the upper hull, then the lower hull, and finally concatenates the two hulls together to give the entire polygon\textquotesingle{}s convex hull. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class containing all functions required for the Kirk Patrick Seidel Algorithm 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{kps_8cpp_a237fe9dff736659b7f190c38e93f2265}\label{kps_8cpp_a237fe9dff736659b7f190c38e93f2265}} 
+\index{kps.cpp@{kps.cpp}!calcSlope@{calcSlope}}
+\index{calcSlope@{calcSlope}!kps.cpp@{kps.cpp}}
+\subsubsection{\texorpdfstring{calcSlope()}{calcSlope()}}
+{\footnotesize\ttfamily double calc\+Slope (\begin{DoxyParamCaption}\item[{pair$<$ \mbox{\hyperlink{struct_point}{Point}}, \mbox{\hyperlink{struct_point}{Point}} $>$}]{edge }\end{DoxyParamCaption})}
+
+
+
+A normal member that takes an edge and determines its slope. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & is a pair$<$\+Point, Point$>$ (conceptually signifying a connecting edge between the two points) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double, the slope of the edge consisting the pair of points 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kps_8cpp_a5bd07e844e37331c57a4a8c52499f6e7}\label{kps_8cpp_a5bd07e844e37331c57a4a8c52499f6e7}} 
+\index{kps.cpp@{kps.cpp}!double\_equals@{double\_equals}}
+\index{double\_equals@{double\_equals}!kps.cpp@{kps.cpp}}
+\subsubsection{\texorpdfstring{double\_equals()}{double\_equals()}}
+{\footnotesize\ttfamily bool double\+\_\+equals (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{epsilon = {\ttfamily 0.001} }\end{DoxyParamCaption})}
+
+
+
+A normal member that determines if two double values are equal upto a particular precision set by an epsilon difference = 0.\+001. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is double precision value \\
+\hline
+{\em b} & is double precision value \\
+\hline
+{\em epsilon} & is a double, set to 0.\+001 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool, 1 if abs(a-\/b) $<$ epsilon, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kps_8cpp_a8262bce8eade0860290d7095fefb17c5}\label{kps_8cpp_a8262bce8eade0860290d7095fefb17c5}} 
+\index{kps.cpp@{kps.cpp}!kirkPatrickSeidel@{kirkPatrickSeidel}}
+\index{kirkPatrickSeidel@{kirkPatrickSeidel}!kps.cpp@{kps.cpp}}
+\subsubsection{\texorpdfstring{kirkPatrickSeidel()}{kirkPatrickSeidel()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{struct_point}{Point}}$>$ kirk\+Patrick\+Seidel (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Main member function that performs the Kirk Patrick Seidel algorithm. It first determines the upper hull, then the lower hull, and finally concatenates the two hulls together to give the entire polygon\textquotesingle{}s convex hull. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & is an int, signifies the number of input points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector $<$\+Point$>$ containing all the points in the convex hull of the n sided polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kps_8cpp_aca9ef6c2372392be7d83758512e04e21}\label{kps_8cpp_aca9ef6c2372392be7d83758512e04e21}} 
+\index{kps.cpp@{kps.cpp}!lowerBridge@{lowerBridge}}
+\index{lowerBridge@{lowerBridge}!kps.cpp@{kps.cpp}}
+\subsubsection{\texorpdfstring{lowerBridge()}{lowerBridge()}}
+{\footnotesize\ttfamily pair$<$\mbox{\hyperlink{struct_point}{Point}}, \mbox{\hyperlink{struct_point}{Point}}$>$ lower\+Bridge (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$}]{T,  }\item[{double}]{median }\end{DoxyParamCaption})}
+
+
+
+Member function that determines the lower bridge in a vector of input points connecting points separated by an x\+\_\+median; x\+\_\+median here is the median of x coordinates of all the points in the input vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & is a vector of Points \\
+\hline
+{\em median} & is a double precision \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair$<$\+Point, Point$>$ contains the lower bridge 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kps_8cpp_a7da0bc7138955968045c79689878e850}\label{kps_8cpp_a7da0bc7138955968045c79689878e850}} 
+\index{kps.cpp@{kps.cpp}!lowerHull@{lowerHull}}
+\index{lowerHull@{lowerHull}!kps.cpp@{kps.cpp}}
+\subsubsection{\texorpdfstring{lowerHull()}{lowerHull()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{struct_point}{Point}}$>$ lower\+Hull (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p\+\_\+min,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p\+\_\+max,  }\item[{vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$}]{T }\end{DoxyParamCaption})}
+
+
+
+Member function that determines the convex hull of all the lower points of the initial two dimensional polygon segmented by a p\+\_\+min and p\+\_\+max. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+min} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em p\+\_\+max} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em T} & is vector$<$\+Point$>$, contains all the input points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Point$>$ containing all the points in the lower hull 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kps_8cpp_a95544592424e5160a0bc59fa1bf20c95}\label{kps_8cpp_a95544592424e5160a0bc59fa1bf20c95}} 
+\index{kps.cpp@{kps.cpp}!orientation@{orientation}}
+\index{orientation@{orientation}!kps.cpp@{kps.cpp}}
+\subsubsection{\texorpdfstring{orientation()}{orientation()}}
+{\footnotesize\ttfamily int orientation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{a,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{b,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{c }\end{DoxyParamCaption})}
+
+
+
+A normal member that determines if an ordered set of three Points are collinear or oriented in a clockwise/counter-\/clockwise manner. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em b} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em c} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int, 0 if collinear, 1 if clockwise, 2 if counter-\/clockwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kps_8cpp_a8e42270d34838870afabaee7248463a3}\label{kps_8cpp_a8e42270d34838870afabaee7248463a3}} 
+\index{kps.cpp@{kps.cpp}!samePoint@{samePoint}}
+\index{samePoint@{samePoint}!kps.cpp@{kps.cpp}}
+\subsubsection{\texorpdfstring{samePoint()}{samePoint()}}
+{\footnotesize\ttfamily bool same\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{a,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{b }\end{DoxyParamCaption})}
+
+
+
+A normal member that takes two points as arguments and tells if the two points are identical. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em b} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool, 0 if not identical, and 1 if identical 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kps_8cpp_ae7c93cc88d352dd18a82b60858bd20b8}\label{kps_8cpp_ae7c93cc88d352dd18a82b60858bd20b8}} 
+\index{kps.cpp@{kps.cpp}!upperBridge@{upperBridge}}
+\index{upperBridge@{upperBridge}!kps.cpp@{kps.cpp}}
+\subsubsection{\texorpdfstring{upperBridge()}{upperBridge()}}
+{\footnotesize\ttfamily pair$<$\mbox{\hyperlink{struct_point}{Point}}, \mbox{\hyperlink{struct_point}{Point}}$>$ upper\+Bridge (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$}]{T,  }\item[{double}]{median }\end{DoxyParamCaption})}
+
+
+
+Member function that determines the upper bridge in a vector of input points connecting points separated by an x\+\_\+median; x\+\_\+median here is the median of x coordinates of all the points in the input vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & is a vector of Points \\
+\hline
+{\em median} & is a double precision value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair$<$\+Point, Point$>$, contains the upper bridge 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kps_8cpp_a60e9476b6f8a1a6c9048157f45ac5c24}\label{kps_8cpp_a60e9476b6f8a1a6c9048157f45ac5c24}} 
+\index{kps.cpp@{kps.cpp}!upperHull@{upperHull}}
+\index{upperHull@{upperHull}!kps.cpp@{kps.cpp}}
+\subsubsection{\texorpdfstring{upperHull()}{upperHull()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{struct_point}{Point}}$>$ upper\+Hull (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p\+\_\+min,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p\+\_\+max,  }\item[{vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$}]{T }\end{DoxyParamCaption})}
+
+
+
+Member function that determines the convex hull of all the upper points of the initial two dimensional polygon segmented by a p\+\_\+min and p\+\_\+max. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+min} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em p\+\_\+max} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em T} & is vector$<$\+Point$>$, contains all the input points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Point$>$ containing all the points in the upper hull 
+\end{DoxyReturn}

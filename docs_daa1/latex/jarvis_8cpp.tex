@@ -1,0 +1,65 @@
+\hypertarget{jarvis_8cpp}{}\section{C\+:/\+Users/\+Nikhil Nair/\+Documents/\+College/assignments-\/git/\+D\+A\+A-\/\+Hulls-\/final/jarvis.cpp File Reference}
+\label{jarvis_8cpp}\index{C:/Users/Nikhil Nair/Documents/College/assignments-\/git/DAA-\/Hulls-\/final/jarvis.cpp@{C:/Users/Nikhil Nair/Documents/College/assignments-\/git/DAA-\/Hulls-\/final/jarvis.cpp}}
+{\ttfamily \#include \char`\"{}jarvis.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{jarvis_8cpp_ad86e4145f454862c64c0075eaf100767}{orient}} (\mbox{\hyperlink{struct_point}{Point}} p, \mbox{\hyperlink{struct_point}{Point}} q, \mbox{\hyperlink{struct_point}{Point}} r)
+\begin{DoxyCompactList}\small\item\em A normal member taking three arguments and returning an integer based on orientation of the points. Used as aux in the sorting function. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ \mbox{\hyperlink{jarvis_8cpp_a01d0c93320b77f3b2516007155483e6d}{convex\+Hull}} (\mbox{\hyperlink{struct_point}{Point}} points\mbox{[}$\,$\mbox{]}, int n)
+\begin{DoxyCompactList}\small\item\em Main member function that performs the \mbox{\hyperlink{class_jarvis}{Jarvis}}\textquotesingle{} algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class containing all functions required for the \mbox{\hyperlink{class_jarvis}{Jarvis}} Scan 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{jarvis_8cpp_a01d0c93320b77f3b2516007155483e6d}\label{jarvis_8cpp_a01d0c93320b77f3b2516007155483e6d}} 
+\index{jarvis.cpp@{jarvis.cpp}!convexHull@{convexHull}}
+\index{convexHull@{convexHull}!jarvis.cpp@{jarvis.cpp}}
+\subsubsection{\texorpdfstring{convexHull()}{convexHull()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{struct_point}{Point}}$>$ convex\+Hull (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{points\mbox{[}$\,$\mbox{]},  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Main member function that performs the \mbox{\hyperlink{class_jarvis}{Jarvis}}\textquotesingle{} algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$points} & is a reference to an array of points \\
+\hline
+{\em N} & is the length of the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Vector of Points that form the Convex Hull in Cyclic Order. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{jarvis_8cpp_ad86e4145f454862c64c0075eaf100767}\label{jarvis_8cpp_ad86e4145f454862c64c0075eaf100767}} 
+\index{jarvis.cpp@{jarvis.cpp}!orient@{orient}}
+\index{orient@{orient}!jarvis.cpp@{jarvis.cpp}}
+\subsubsection{\texorpdfstring{orient()}{orient()}}
+{\footnotesize\ttfamily int orient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{q,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{r }\end{DoxyParamCaption})}
+
+
+
+A normal member taking three arguments and returning an integer based on orientation of the points. Used as aux in the sorting function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em b} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em c} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer, value is -\/1 if points are counter-\/clockwise, 1 if Clockwise, 0 if linear 
+\end{DoxyReturn}

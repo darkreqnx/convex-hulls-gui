@@ -1,0 +1,133 @@
+\hypertarget{graham_8cpp}{}\section{C\+:/\+Users/\+Nikhil Nair/\+Documents/\+College/assignments-\/git/\+D\+A\+A-\/\+Hulls-\/final/graham.cpp File Reference}
+\label{graham_8cpp}\index{C:/Users/Nikhil Nair/Documents/College/assignments-\/git/DAA-\/Hulls-\/final/graham.cpp@{C:/Users/Nikhil Nair/Documents/College/assignments-\/git/DAA-\/Hulls-\/final/graham.cpp}}
+{\ttfamily \#include \char`\"{}graham.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{graham_8cpp_aa0a1982b5af434dc6fc29225254b5800}{ccw}} (\mbox{\hyperlink{struct_point}{Point}} a, \mbox{\hyperlink{struct_point}{Point}} b, \mbox{\hyperlink{struct_point}{Point}} c)
+\begin{DoxyCompactList}\small\item\em A normal member taking three arguments and returning an integer based on orientation of the points. Used in auxilliary for main algorithm. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{graham_8cpp_a7e885639218bc534cb887f953aebe3c3}{ccwsort}} (\mbox{\hyperlink{struct_point}{Point}} a, \mbox{\hyperlink{struct_point}{Point}} b, \mbox{\hyperlink{struct_point}{Point}} c)
+\begin{DoxyCompactList}\small\item\em A normal member taking three arguments and returning an integer based on orientation of the points. Used as aux in the sorting function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{graham_8cpp_a4360d983f4aebbfa9a2007c0839b1e61}{dist}} (\mbox{\hyperlink{struct_point}{Point}} a, \mbox{\hyperlink{struct_point}{Point}} b)
+\begin{DoxyCompactList}\small\item\em A normal member taking Two arguments and returning an integer for the square of distance. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{graham_8cpp_a7a23cc2505de4e3ddd780dc6aadb3ef3}{P\+O\+L\+A\+R\+\_\+\+O\+R\+D\+ER}} (\mbox{\hyperlink{struct_point}{Point}} a, \mbox{\hyperlink{struct_point}{Point}} b)
+\begin{DoxyCompactList}\small\item\em A member function used for sorting points according to polar order w.\+r.\+t the pivot. \end{DoxyCompactList}\item 
+stack$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ \mbox{\hyperlink{graham_8cpp_ae068036567fe6dce56052e7ebbe8e983}{scan}} (\mbox{\hyperlink{struct_point}{Point}} $\ast$points, int N)
+\begin{DoxyCompactList}\small\item\em Main member function that performs the \mbox{\hyperlink{class_graham}{Graham}} Scan algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class containing all functions required for the \mbox{\hyperlink{class_graham}{Graham}} Scan Algorithm 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{graham_8cpp_aa0a1982b5af434dc6fc29225254b5800}\label{graham_8cpp_aa0a1982b5af434dc6fc29225254b5800}} 
+\index{graham.cpp@{graham.cpp}!ccw@{ccw}}
+\index{ccw@{ccw}!graham.cpp@{graham.cpp}}
+\subsubsection{\texorpdfstring{ccw()}{ccw()}}
+{\footnotesize\ttfamily int ccw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{a,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{b,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{c }\end{DoxyParamCaption})}
+
+
+
+A normal member taking three arguments and returning an integer based on orientation of the points. Used in auxilliary for main algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em b} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em c} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer, value is -\/1 if points are counter-\/clockwise, 1 if Clockwise, 0 if linear 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graham_8cpp_a7e885639218bc534cb887f953aebe3c3}\label{graham_8cpp_a7e885639218bc534cb887f953aebe3c3}} 
+\index{graham.cpp@{graham.cpp}!ccwsort@{ccwsort}}
+\index{ccwsort@{ccwsort}!graham.cpp@{graham.cpp}}
+\subsubsection{\texorpdfstring{ccwsort()}{ccwsort()}}
+{\footnotesize\ttfamily int ccwsort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{a,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{b,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{c }\end{DoxyParamCaption})}
+
+
+
+A normal member taking three arguments and returning an integer based on orientation of the points. Used as aux in the sorting function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em b} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em c} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer, value is -\/1 if points are counter-\/clockwise, 1 if Clockwise, 0 if linear 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graham_8cpp_a4360d983f4aebbfa9a2007c0839b1e61}\label{graham_8cpp_a4360d983f4aebbfa9a2007c0839b1e61}} 
+\index{graham.cpp@{graham.cpp}!dist@{dist}}
+\index{dist@{dist}!graham.cpp@{graham.cpp}}
+\subsubsection{\texorpdfstring{dist()}{dist()}}
+{\footnotesize\ttfamily int dist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{a,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{b }\end{DoxyParamCaption})}
+
+
+
+A normal member taking Two arguments and returning an integer for the square of distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em b} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer, square of distance between the Points a and b. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graham_8cpp_a7a23cc2505de4e3ddd780dc6aadb3ef3}\label{graham_8cpp_a7a23cc2505de4e3ddd780dc6aadb3ef3}} 
+\index{graham.cpp@{graham.cpp}!POLAR\_ORDER@{POLAR\_ORDER}}
+\index{POLAR\_ORDER@{POLAR\_ORDER}!graham.cpp@{graham.cpp}}
+\subsubsection{\texorpdfstring{POLAR\_ORDER()}{POLAR\_ORDER()}}
+{\footnotesize\ttfamily bool P\+O\+L\+A\+R\+\_\+\+O\+R\+D\+ER (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{a,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{b }\end{DoxyParamCaption})}
+
+
+
+A member function used for sorting points according to polar order w.\+r.\+t the pivot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em b} & is a \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer, square of distance between the Points a and b. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graham_8cpp_ae068036567fe6dce56052e7ebbe8e983}\label{graham_8cpp_ae068036567fe6dce56052e7ebbe8e983}} 
+\index{graham.cpp@{graham.cpp}!scan@{scan}}
+\index{scan@{scan}!graham.cpp@{graham.cpp}}
+\subsubsection{\texorpdfstring{scan()}{scan()}}
+{\footnotesize\ttfamily stack$<$\mbox{\hyperlink{struct_point}{Point}}$>$ scan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}} $\ast$}]{points,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Main member function that performs the \mbox{\hyperlink{class_graham}{Graham}} Scan algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$points} & is a reference to an array of points \\
+\hline
+{\em N} & is the length of the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Stack of Points that form the Convex Hull in Cyclic Order. 
+\end{DoxyReturn}
