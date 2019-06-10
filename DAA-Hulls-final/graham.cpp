@@ -23,7 +23,7 @@ static stack<Point> hull;
 
 static Graph prevGraph;
 //
-/*!
+/*! 
  *
  *\brief A normal member taking three arguments and returning an integer based on orientation of the points. Used in auxilliary for main algorithm
  *\param a is a Point

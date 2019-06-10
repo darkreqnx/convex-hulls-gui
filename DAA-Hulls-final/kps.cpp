@@ -1,7 +1,3 @@
-/*!
- * \file
-  Class containing all functions required for the Kirk Patrick Seidel Algorithm
-*/
 #include "kps.h"
 #include "main.h"
 #include <bits/stdc++.h>
@@ -15,46 +11,38 @@ static Graph x;
 
 static vector<Point> S;
 
-/*!
- * \brief A normal member that takes two points as arguments and tells if the two points are identical
- * \param a is a Point
- * \param b is a Point
- * \return bool, 0 if not identical, and 1 if identical
- */
 bool samePoint(Point a, Point b)
 {
     return (a.x == b.x) && (a.y == b.y);
 }
 
-/*!
- * \brief A normal member that takes an edge and determines its slope
- * \param edge is a pair<Point, Point> (conceptually signifying a connecting edge between the two points)
- * \return double, the slope of the edge consisting the pair of points
- */
+void printS()
+{
+    for (auto i = S.begin(); i != S.end(); i++)
+    {
+        cout << (*i).x << ", " << (*i).y << endl;
+    }
+}
+
+void printVector(vector<Point> v)
+{
+    for (auto i = v.begin(); i != v.end(); i++)
+    {
+        cout << (*i).x << ", " << (*i).y << endl;
+    }
+}
+
 double calcSlope(pair<Point, Point> edge)
 {
     double slope = (edge.first.y - edge.second.y) / double((edge.first.x - edge.second.x));
     return slope;
 }
 
-/*!
- * \brief A normal member that determines if two double values are equal upto a particular precision set by an epsilon difference = 0.001
- * \param a is double precision value
- * \param b is double precision value
- * \param epsilon is a double, set to 0.001
- * \return bool, 1 if abs(a-b) < epsilon, 0 otherwise
- */
 bool double_equals(double a, double b, double epsilon = 0.001)
 {
     return abs(a - b) < epsilon;
 }
 
-/*!
- * \brief Member function that determines the upper bridge in a vector of input points connecting points separated by an x_median; x_median here is the median of x coordinates of all the points in the input vector
- * \param T is a vector of Points
- * \param median is a double precision value
- * \return pair<Point, Point>, contains the upper bridge
- */
 pair<Point, Point> upperBridge(vector<Point> T, double median)
 {
 
@@ -224,12 +212,6 @@ pair<Point, Point> upperBridge(vector<Point> T, double median)
     return upperBridge(candidates, median);
 }
 
-/*!
- * \brief Member function that determines the lower bridge in a vector of input points connecting points separated by an x_median; x_median here is the median of x coordinates of all the points in the input vector
- * \param T is a vector of Points
- * \param median is a double precision
- * \return pair<Point, Point> contains the lower bridge
- */
 pair<Point, Point> lowerBridge(vector<Point> T, double median)
 {
 
@@ -256,6 +238,9 @@ pair<Point, Point> lowerBridge(vector<Point> T, double median)
     // Generate position vector
     vector<int> position(T.size());
     iota(position.begin(), position.end(), 0);
+    // Random Generator
+    // random_device random_dev;
+    // mt19937 generator(random_dev());
     random_shuffle(position.begin(), position.end());
 
     while (position.size() > 1)
@@ -399,13 +384,6 @@ pair<Point, Point> lowerBridge(vector<Point> T, double median)
     return lowerBridge(candidates, median);
 }
 
-/*!
- * \brief A normal member that determines if an ordered set of three Points are collinear or oriented in a clockwise/counter-clockwise manner
- * \param a is a Point
- * \param b is a Point
- * \param c is a Point
- * \return int, 0 if collinear, 1 if clockwise, 2 if counter-clockwise
- */
 int orientation(Point a, Point b, Point c)
 {
     long long int ornt = ((b.y - a.y) * (c.x - b.x)) - ((b.x - a.x) * (c.y - b.y));
@@ -419,13 +397,6 @@ int orientation(Point a, Point b, Point c)
     return ornt;
 }
 
-/*!
- * \brief Member function that determines the convex hull of all the upper points of the initial two dimensional polygon segmented by a p_min and p_max
- * \param p_min is a Point
- * \param p_max is a Point
- * \param T is vector<Point>, contains all the input points
- * \return vector<Point> containing all the points in the upper hull
- */
 vector<Point> upperHull(Point p_min, Point p_max, vector<Point> T)
 {
     vector<Point> upper;
@@ -508,13 +479,6 @@ vector<Point> upperHull(Point p_min, Point p_max, vector<Point> T)
     return uh_left;
 }
 
-/*!
- * \brief Member function that determines the convex hull of all the lower points of the initial two dimensional polygon segmented by a p_min and p_max
- * \param p_min is a Point
- * \param p_max is a Point
- * \param T is vector<Point>, contains all the input points
- * \return vector<Point> containing all the points in the lower hull
- */
 vector<Point> lowerHull(Point p_min, Point p_max, vector<Point> T)
 {
     vector<Point> lower;
@@ -543,6 +507,11 @@ vector<Point> lowerHull(Point p_min, Point p_max, vector<Point> T)
         double temp_med_left = temp[(temp.size() / 2) - 1];
         x_median = (temp_med_left + temp_med_right) / 2;
     }
+
+//    x = gfirst;
+//    x.addBoldLine(x_median, 0, x_median, 1000);
+//    x.Message = "x_median line";
+//    gvector.push_back(x);Count++;
 
     //split into T_left and T_right
     vector<Point> T_left, T_right;
@@ -589,6 +558,26 @@ vector<Point> lowerHull(Point p_min, Point p_max, vector<Point> T)
             T_right.push_back(subject);
     }
 
+//    x = gfirst;
+//    x.addBoldLine(x_median, 0, x_median, 1000);
+//    x.addBoldLine(p_min.x, p_min.y, p_l.x, p_l.y);
+//    for(auto iter = T_left.begin(); iter != T_left.end(); iter++){
+//        Point gui_buff = *iter;
+//        x.addBoldPoint(gui_buff.x, gui_buff.y);
+//    }
+//    x.Message = "Points in T_left";
+//    gvector.push_back(x);Count++;
+
+//    x = gfirst;
+//    x.addBoldLine(x_median, 0, x_median, 1000);
+//    x.addBoldLine(p_r.x, p_r.y, p_max.x, p_max.y);
+//    for(auto iter = T_right.begin(); iter != T_right.end(); iter++){
+//        Point gui_buff = *iter;
+//        x.addBoldPoint(gui_buff.x, gui_buff.y);
+//    }
+//    x.Message = "Points in T_left";
+//    gvector.push_back(x);Count++;
+
     vector<Point> lh_left = lowerHull(p_min, p_l, T_left);
     vector<Point> lh_right = lowerHull(p_r, p_max, T_right);
 
@@ -596,11 +585,7 @@ vector<Point> lowerHull(Point p_min, Point p_max, vector<Point> T)
     lh_left.insert(lh_left.end(), lh_right.begin(), lh_right.end());
     return lh_left;
 }
-/*!
- * \brief Main member function that performs the Kirk Patrick Seidel algorithm. It first determines the upper hull, then the lower hull, and finally concatenates the two hulls together to give the entire polygon's convex hull.
- * \param n is an int, signifies the number of input points
- * \return vector <Point> containing all the points in the convex hull of the n sided polygon
- */
+
 vector<Point> kirkPatrickSeidel(int n)
 {
     //pmin and pmax to divide into upper and lower halves
@@ -688,8 +673,65 @@ vector<Point> kirkPatrickSeidel(int n)
 
     // concatenate upper and lower
     upper.insert(upper.end(), lower.begin(), lower.end());
+//     printVector(upper);
+
+//    ofstream out_file;
+//    out_file.open("output.txt");
+
+//    for (auto iter = upper.begin(); iter != upper.end(); iter++)
+//    {
+//        out_file << (*iter).x << ", " << (*iter).y << endl;
+//    }
+
+//    out_file.close();
     return upper;
 }
+
+void saveTokenize(string str_line)
+{
+    Point newPoint;
+
+    char line[1024];
+    strcpy(line, str_line.c_str());
+
+    char *token = strtok(line, " ");
+    char *x = token;
+    token = strtok(NULL, " ");
+    char *y = token;
+
+    string str_x(x);
+    string str_y(y);
+
+    newPoint.x = stoi(str_x);
+    newPoint.y = stoi(str_y);
+
+    S.push_back(newPoint);
+}
+
+//int main()
+//{
+//    string line;
+//    ifstream inp_file("input.txt");
+
+//    if (inp_file.is_open())
+//    {
+//        while (getline(inp_file, line))
+//        {
+//            saveTokenize(line);
+//        }
+//        inp_file.close();
+//    }
+//    else
+//    {
+//        cout << "err: Cannot open input file" << endl;
+//    }
+
+//    int n = S.size();
+//    kirkPatrickSeidel(n);
+
+//    return 0;
+//}
+
 
 int KPS::KPSScan()
 {
@@ -710,7 +752,21 @@ int KPS::KPSScan()
         }
     vector<Point> hull = kirkPatrickSeidel(np.size());
 
+    // Print Result
+//    for (int i = 0; i < hull.size(); i++){
+//        cout << "(" << hull[i].x << ", "
+//        << hull[i].y << ")\n";
+
+//        gfinal.addBoldPoint(hull[i].x,hull[i].y);
+//    }
+
     Graph gfinal = gvector.back();
+//    std::vector<Point> bp = gfinal.getBoldPoints();
+//    int s = bp.size();
+//    for(int i=0;i<s-1;i++){
+//        gfinal.addBoldLine(bp[i].x,bp[i].y,bp[i+1].x,bp[i+1].y);
+//    }
+//    gfinal.addBoldLine(bp[0].x,bp[0].y,bp[s-1].x,bp[s-1].y);
     gfinal.Message = "End of Kirk Patrick Seidel Algorithm!";
     gvector.push_back(gfinal);Count++;
     return Count;
